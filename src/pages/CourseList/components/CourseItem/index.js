@@ -1,8 +1,11 @@
-import React from "react";
+import React, {useState} from "react";
 import {StyledListItem} from "./styles";
 import {Button, ButtonGroup, Col} from "react-bootstrap";
+import {Link, useNavigate} from "react-router-dom";
+import constants from "../../../../constants";
 
-const CourseItem = ({data}) => {
+const CourseItem = ({data, onNavigateToEdit, onDelete}) => {
+    const navigate = useNavigate();
     return (
         <StyledListItem action>
             <Col>
@@ -10,8 +13,8 @@ const CourseItem = ({data}) => {
                 <p>{data?.description}</p>
             </Col>
             <ButtonGroup>
-                <Button variant="primary">Edit</Button>
-                <Button variant="danger">Delete</Button>
+                <Button variant="primary" onClick={onNavigateToEdit}>Edit</Button>
+                <Button variant="danger" onClick={onDelete}>Delete</Button>
                 <Button variant="secondary">Download</Button>
             </ButtonGroup>
         </StyledListItem>
