@@ -30,9 +30,12 @@ const inititialData = {
 
 const EditCourse = ({editCourse}) => {
     const [data, setData] = React.useState(inititialData);
-    const location = useLocation();
-    let query = new URLSearchParams(location.search);
-    let courseId = query.get('courseId');
+
+    // let query = new URLSearchParams(location.search);
+    // let courseId = query.get('courseId');
+    const params = useParams();
+    const courseId = params.courseId;
+
 
     const navigate = useNavigate();
 

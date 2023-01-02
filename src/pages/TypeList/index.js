@@ -15,7 +15,7 @@ const List = ({data, onNavigate}) => {
 
     const onNavigateToEdit = (id) => () => {
         // onNavigate(constants.ROUTES.EDIT_COURSE_TYPE, {id})
-        navigate(`${constants.ROUTES.EDIT_COURSE_TYPE}/?courseTypeId=${id}`);
+        navigate(`${constants.ROUTES.EDIT_COURSE_TYPE}/${id}`);
     }
 
     const onDelete = (id) => () => {

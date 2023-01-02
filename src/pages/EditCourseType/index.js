@@ -6,7 +6,7 @@ import constants from "../../constants";
 import {getCourseTypeById} from "../../services/courseApi";
 import {connect} from "react-redux";
 import {editCourseType} from "../../store/actions/courseTypeAction";
-import {useLocation, useNavigate} from "react-router-dom";
+import {useLocation, useNavigate, useParams} from "react-router-dom";
 
 const inititialData = {
     typeName: "",
@@ -14,9 +14,11 @@ const inititialData = {
 
 const EditCourseType = ({editCourseType}) => {
     const [data, setData] = React.useState(inititialData);
-    const location = useLocation();
-    let query = new URLSearchParams(location.search);
-    let courseTypeId = query.get('courseTypeId');
+    // const location = useLocation();
+    // let query = new URLSearchParams(location.search);
+    // let courseTypeId = query.get('courseTypeId');
+    const params = useParams();
+    const courseTypeId = params.courseTypeId
 
     const navigate = useNavigate();
 
