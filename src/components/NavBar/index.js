@@ -9,12 +9,13 @@ const menu = [
     {path: constants.ROUTES.COURSE_TYPE, text: "Course Type List"}
 ]
 
-const NavBarComp = () => {
+const NavBarComp = ({setIsLoggedIn}) => {
     const navigate = useNavigate();
     return (
         <Navbar bg="light" expand="light" sticky={"top"}>
             <Container>
-                <Navbar.Brand onClick={() => navigate(constants.ROUTES.DASHBOARD)} style={{cursor: "pointer"}}>Enigma Course</Navbar.Brand>
+                <Navbar.Brand onClick={() => navigate(constants.ROUTES.DASHBOARD)} style={{cursor: "pointer"}}>Enigma
+                    Course</Navbar.Brand>
                 <StyledNav>
                     {menu?.map((item) => (
                             <Link className="nav-link mx-3" to={item.path}>{item.text}
@@ -22,6 +23,7 @@ const NavBarComp = () => {
                         )
                     )}
                 </StyledNav>
+                <Button variant="outline-danger" onClick={() => setIsLoggedIn(false)}>Logot</Button>{' '}
             </Container>
         </Navbar>
     );

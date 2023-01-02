@@ -5,7 +5,6 @@ import {Link, useNavigate} from "react-router-dom";
 import constants from "../../../../constants";
 
 const CourseItem = ({data, onNavigateToEdit, onDelete}) => {
-    const navigate = useNavigate();
     return (
         <StyledListItem action>
             <Col>

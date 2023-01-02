@@ -18,6 +18,8 @@ const constants = {
         EDIT_COURSE_TYPE: "/course-type/edit",
 
         DASHBOARD: "/",
+
+        LOGIN: "/auth/login"
     }
 }
 
